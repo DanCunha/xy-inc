@@ -1,0 +1,10 @@
+com\zup\TesteDev\domain\Poi$PoiBuilder.class
+com\zup\TesteDev\dto\PoiDTO.class
+com\zup\TesteDev\mapper\PoiMapper.class
+com\zup\TesteDev\service\impl\PoiServiceImpl.class
+com\zup\TesteDev\TesteDevApplication.class
+com\zup\TesteDev\domain\Poi.class
+com\zup\TesteDev\dto\PoiDTO$PoiDTOBuilder.class
+com\zup\TesteDev\controller\PoiController.class
+com\zup\TesteDev\repository\PoiRepository.class
+com\zup\TesteDev\service\PoiService.class
