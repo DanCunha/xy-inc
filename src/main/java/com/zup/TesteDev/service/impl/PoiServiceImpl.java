@@ -29,19 +29,22 @@ public class PoiServiceImpl implements PoiService {
     }
 
     @Override
-    public List<PoiDTO> listarPoisPorProx(Integer cord_x, Integer cord_y, Integer d_max) {
+    public List<PoiDTO> listPoisByProx(Integer cord_x, Integer cord_y, Integer d_max) {
         List<Poi> poiList = poiRepository.findAll();
         List<PoiDTO> poiDTOList = new ArrayList<>();
 
         for (Poi poi: poiList) {
-            if((((poi.getCord_x() - cord_x) * -1) <= d_max) && (((poi.getCord_y() - cord_y) * -1) <= d_max)){
-                System.out.println("Cordenada 1: " + ((poi.getCord_x() - cord_x)) );
-                System.out.println("Cordenada 2: " + ((poi.getCord_y() - cord_y)) );
+            if(calculateProximity(poi.getCord_x(), poi.getCord_y(), cord_x, cord_y, d_max)){
                 poiDTOList.add(new PoiMapper().getPoiDTO(poi));
             }
-
         }
 
         return poiDTOList;
+    }
+
+    public boolean calculateProximity(Integer cord_x, Integer cord_y, Integer req_cord_x, Integer req_cord_y, Integer d_max){
+        Integer res_x = (req_cord_x - cord_x) * (req_cord_x - cord_x);
+        Integer res_y = (req_cord_y - cord_y) * (req_cord_y - cord_y);
+        return Math.sqrt(res_x + res_y) <= d_max ? true : false;
     }
 }

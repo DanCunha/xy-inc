@@ -27,12 +27,11 @@ public class PoiController {
         return poiService.findAll();
     }
 
-    @GetMapping("/listarPoisPorProx")
+    @GetMapping("/listPoisByProx")
     public List<PoiDTO> listarPoisPorProx(@RequestParam(value = "cord_x",required = true)  Integer cord_x,
                                           @RequestParam(value = "cord_y",required = true)  Integer cord_y,
                                             @RequestParam(value = "d_max",required = true)  Integer d_max){
-        System.out.println("TESTE: cord_x: " + cord_x + " / cord_y: " + cord_y);
-        return poiService.listarPoisPorProx(cord_x, cord_y, d_max);
+        return poiService.listPoisByProx(cord_x, cord_y, d_max);
     }
 
 }
