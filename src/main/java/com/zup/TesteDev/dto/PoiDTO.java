@@ -13,4 +13,5 @@ public class PoiDTO {
     private String name;
     private Integer cord_x;
     private Integer cord_y;
+
 }

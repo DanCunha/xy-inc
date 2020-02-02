@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import java.util.List;
 
 @RestController()
@@ -28,9 +29,9 @@ public class PoiController {
     }
 
     @GetMapping("/listPoisByProx")
-    public List<PoiDTO> listarPoisPorProx(@RequestParam(value = "cord_x",required = true)  Integer cord_x,
-                                          @RequestParam(value = "cord_y",required = true)  Integer cord_y,
-                                            @RequestParam(value = "d_max",required = true)  Integer d_max){
+    public List<PoiDTO> listarPoisByProx(@RequestParam(value = "cord_x",required = true) @Min(1) Integer cord_x,
+                                          @RequestParam(value = "cord_y",required = true) @Min(1) Integer cord_y,
+                                            @RequestParam(value = "d_max",required = true) @Min(1) Integer d_max){
         return poiService.listPoisByProx(cord_x, cord_y, d_max);
     }
 

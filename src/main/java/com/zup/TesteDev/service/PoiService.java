@@ -12,4 +12,5 @@ public interface PoiService {
     List<PoiDTO> findAll();
     Poi add(Poi dto);
     List<PoiDTO> listPoisByProx(Integer cord_x, Integer cord_y, Integer d_max);
+
 }

@@ -1,1 +1,4 @@
 com\zup\TesteDev\TesteDevApplicationTests.class
+com\zup\TesteDev\service\impl\PoiServiceImplIntegrationTest.class
+com\zup\TesteDev\service\impl\PoiServiceImplIntegrationTest$PoiServiceImplTestContextConfiguration.class
+com\zup\TesteDev\mapper\PoiMapperTest.class
