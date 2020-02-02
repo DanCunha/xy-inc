@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController()
 @RequestMapping("/poi")
@@ -19,6 +20,19 @@ public class PoiController {
     @PostMapping
     public PoiDTO create(@RequestBody @Valid PoiDTO dto){
         return new PoiMapper().getPoiDTO(poiService.add(new PoiMapper().getPoiEntity(dto)));
+    }
+
+    @GetMapping
+    public List<PoiDTO> findAll(){
+        return poiService.findAll();
+    }
+
+    @GetMapping("/listarPoisPorProx")
+    public List<PoiDTO> listarPoisPorProx(@RequestParam(value = "cord_x",required = true)  Integer cord_x,
+                                          @RequestParam(value = "cord_y",required = true)  Integer cord_y,
+                                            @RequestParam(value = "d_max",required = true)  Integer d_max){
+        System.out.println("TESTE: cord_x: " + cord_x + " / cord_y: " + cord_y);
+        return poiService.listarPoisPorProx(cord_x, cord_y, d_max);
     }
 
 }

@@ -3,6 +3,9 @@ package com.zup.TesteDev.mapper;
 import com.zup.TesteDev.domain.Poi;
 import com.zup.TesteDev.dto.PoiDTO;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PoiMapper {
 
     public Poi getPoiEntity(PoiDTO dto){
@@ -21,6 +24,15 @@ public class PoiMapper {
                 .cord_x(entity.getCord_x())
                 .cord_y(entity.getCord_y())
                 .build();
+    }
+
+    public List<PoiDTO> getListPoiDTO(List<Poi> pois){
+        List<PoiDTO> poiDTOList = new ArrayList<>();
+
+        for (Poi poi : pois) {
+            poiDTOList.add(getPoiDTO(poi));
+        }
+        return poiDTOList;
     }
 
 }

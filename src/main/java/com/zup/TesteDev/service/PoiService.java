@@ -9,6 +9,7 @@ import java.util.List;
 @Service
 public interface PoiService {
 
-    List<Poi> findAll();
+    List<PoiDTO> findAll();
     Poi add(Poi dto);
+    List<PoiDTO> listarPoisPorProx(Integer cord_x, Integer cord_y, Integer d_max);
 }
