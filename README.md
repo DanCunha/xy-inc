@@ -15,7 +15,7 @@ To run the API is required to have **Maven** and **Java 11** installed.
 ````
 mvn clean spring-boot:run
 ````
-To access the API: [http://localhost:8090/api/swagger-ui.html#/] 
+To access the API: [http://localhost:8090/api/swagger-ui.html#/](http://localhost:8090/api/swagger-ui.html#/) 
 
 ### Running API Test
 To run the API is required to have **Maven** and **Java 11** installed.
