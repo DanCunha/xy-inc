@@ -7,4 +7,5 @@ com\zup\TesteDev\domain\Poi.class
 com\zup\TesteDev\dto\PoiDTO$PoiDTOBuilder.class
 com\zup\TesteDev\controller\PoiController.class
 com\zup\TesteDev\repository\PoiRepository.class
+com\zup\TesteDev\config\swagger\SwaggerConfig.class
 com\zup\TesteDev\service\PoiService.class
